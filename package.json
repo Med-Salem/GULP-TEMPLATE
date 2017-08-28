@@ -1,0 +1,33 @@
+{
+  "name": "gulp_template",
+  "version": "1.0.0",
+  "description": "Initial setup for a simple gulp project.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "node_modules/.bin/gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Med-Salem/GULP-TEMPLATE.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Med.Salem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Med-Salem/GULP-TEMPLATE/issues"
+  },
+  "homepage": "https://github.com/Med-Salem/GULP-TEMPLATE#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "eslint": "^4.5.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
+  }
+}
