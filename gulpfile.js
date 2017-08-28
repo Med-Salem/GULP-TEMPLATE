@@ -1,4 +1,4 @@
-// Global variable
+// Global variables
 var DIST_DIRECTORY = './dist';
 var STYLES_DIRECTORY = DIST_DIRECTORY + '/styles';
 var SCRIPTS_DIRECTORY = DIST_DIRECTORY + '/scripts';
@@ -23,7 +23,11 @@ var eslint = require('gulp-eslint');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
-gulp.task('default', ['watch', 'serve'], function() {
+gulp.task('default', ['watch', 'serve']);
+
+gulp.task('dist', ['copy-html', 'copy-images', 'styles', 'lint', 'scripts-dist']);
+
+gulp.task('serve', ['copy-html', 'copy-images', 'styles', 'lint', 'scripts'], function() {
 	// init browser-sync server
 	browserSync.init({
 		server: DIST_DIRECTORY
@@ -35,10 +39,6 @@ gulp.task('watch', function () {
 	gulp.watch('app/scripts/**/*.js', ['lint', 'scripts']);
 	gulp.watch('app/**/*.html', ['copy-html']);
 });
-
-gulp.task('serve', ['copy-html', 'copy-images', 'styles', 'lint', 'scripts']);
-
-gulp.task('dist', ['copy-html', 'copy-images', 'styles', 'lint', 'scripts-dist']);
 
 gulp.task('scripts', function(){
 	gulp.src('app/scripts/**/*.js')
